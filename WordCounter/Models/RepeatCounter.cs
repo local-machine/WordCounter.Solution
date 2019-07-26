@@ -14,57 +14,66 @@ namespace WordCounter.Models
             Sentence = userSentance;
         }
 
-        public int IsWordInSentence()
+        // public int IsWordInSentence()
+        // {
+        //     char[] delimiterChars = { ' ', ',', '.', ':', ';', '!', '?' };
+        //     string[] wordsFromSentence = Sentence.Split(delimiterChars);
+
+        //     if (Sentence.Contains(Word))
+        //     {
+        //       foreach (var Word in Sentence)
+        //       {
+        //           int occurenceCount = Sentence.Split(Word).Length -1;
+        //       }
+        //     }
+        // }
+        public bool IsValidWordInSentence()
         {
-            char[] delimiterChars = { ' ', ',', '.', ':', ';', '!', '?' };
-            string[] wordsFromSentence = Sentence.Split(delimiterChars);
-
-            if (wordsFromSentence.Contains(Word))
+            if (Sentence.Contains(" " + Word + " "))
             {
-              foreach (var Word in wordsFromSentence)
-              {
-                  int occurenceCount = Sentence.Split(Word).Length -1;
-              }
+                return true;
             }
-
+            else if (Sentence.Contains(" " + Word + "."))
+            {
+                return true;
+            }
+            else if (Sentence.Contains(" " + Word + "!"))
+            {
+                return true;
+            }
+            else if (Sentence.Contains(" " + Word + "?"))
+            {
+                return true;
+            }
+            else if (Sentence.Contains(" " + Word + ";"))
+            {
+                return true;
+            }
+            else if (Sentence.Contains(" " + Word + ","))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        // public bool IsValidWordInSentence()
-        // {
-        //   if (Sentence.Contains(" " + Word + " "))
-        //   {
-        //     return true;
-        //   }
-        //   else if (Sentence.Contains(" " + Word + "."))
-        //   {
-        //     return true;
-        //   }
-        //   else if (Sentence.Contains(" " + Word + "!"))
-        //   {
-        //     return true;
-        //   }
-        //   else if (Sentence.Contains(" " + Word + "?"))
-        //   {
-        //     return true;
-        //   }
-        //   else if (Sentence.Contains(" " + Word + ";"))
-        //   {
-        //     return true;
-        //   }
-        //   else if (Sentence.Contains(" " + Word + ","))
-        //   {
-        //     return true;
-        //   }
-        //   else
-        //   {
-        //     return false;
-        //   }
-        // }
 
-        // int occur = 0;
-        // public int GetOccurencesCount()
-        // {
-        //   while ((occur < Sentence.Length) && (occur = ))
-        // }
+        int occur = 0;
+
+        public int GetOccurenceCount()
+        {
+            if (IsValidWordInSentence() == true)
+            {
+                int occur = Sentence.Split(Word).Length - 1;
+                return occur;
+            }
+            else
+            {
+                int occur = 0;
+                return occur;
+            }
+        }
 
     }
 
