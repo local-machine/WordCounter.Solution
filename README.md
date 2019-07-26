@@ -3,12 +3,12 @@
 -----
 
 ## Description
-* Project template for C# console apps
-* Unit testing set up too
+Simple console application that takes a user's word and sentance and counts the number of times that word appears in the sentance as a stand alone word. 
 
 ## Technologies Used
 * C#
-* MSTest
+* .NET
+* MSTesting
 
 ## Installation
 * Clone project repo
@@ -21,22 +21,19 @@ $ dotnet run
 ```
 
 ## Specs
-
 | Behaviors       | Input          | Output      |
 | ---------------- |:------------:| :--------------:|
+| User enters a word and a sentence.| "cat" "I'm walking to the cathedral." | 0 |
+| User enters a word and a sentence.| "cat" "I'm walking to the cat cafe" | 1 |
+| User enters a word and a sentence.| "cat" "My cat and I are walking to the cat cafe" | 2 |
 
+## Known Bugs
+* No known bugs at this time.
 
-## Project Directory
-1. Model Directory
-    * contains project's .cs files 
-    * this is where your classes go
-2. Project.csproj
-    * things needed to install 
-    * dotnet restore -- will install dependencies
+## Support and contact details
+_Please contact Jessica Munoz with questions and comments._
 
-## Project.Tests Directory
-1. ModelTests Directory
-    * your tests will be here
-2. Project.Tests.csproj
-    * make sure update the ProjectReference !
-    * run dotnet restore to install the dependencies
+### License
+*GNU GPLv3*
+
+Copyright (c) 2019 **_Jessica Munoz_**
