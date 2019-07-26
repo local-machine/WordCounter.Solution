@@ -13,38 +13,52 @@ namespace WordCounter.Models
             Word = userWord;
             Sentence = userSentance;
         }
-        
-        public bool IsValidWordInSentence()
+
+        public int IsWordInSentence()
         {
-          if (Sentence.Contains(" " + Word + " "))
-          {
-            return true;
-          }
-          else if (Sentence.Contains(" " + Word + "."))
-          {
-            return true;
-          }
-          else if (Sentence.Contains(" " + Word + "!"))
-          {
-            return true;
-          }
-          else if (Sentence.Contains(" " + Word + "?"))
-          {
-            return true;
-          }
-          else if (Sentence.Contains(" " + Word + ";"))
-          {
-            return true;
-          }
-          else if (Sentence.Contains(" " + Word + ","))
-          {
-            return true;
-          }
-          else
-          {
-            return false;
-          }
+            char[] delimiterChars = { ' ', ',', '.', ':', ';', '!', '?' };
+            string[] wordsFromSentence = Sentence.Split(delimiterChars);
+
+            if (wordsFromSentence.Contains(Word))
+            {
+              foreach (var Word in wordsFromSentence)
+              {
+                  int occurenceCount = Sentence.Split(Word).Length -1;
+              }
+            }
+
         }
+        // public bool IsValidWordInSentence()
+        // {
+        //   if (Sentence.Contains(" " + Word + " "))
+        //   {
+        //     return true;
+        //   }
+        //   else if (Sentence.Contains(" " + Word + "."))
+        //   {
+        //     return true;
+        //   }
+        //   else if (Sentence.Contains(" " + Word + "!"))
+        //   {
+        //     return true;
+        //   }
+        //   else if (Sentence.Contains(" " + Word + "?"))
+        //   {
+        //     return true;
+        //   }
+        //   else if (Sentence.Contains(" " + Word + ";"))
+        //   {
+        //     return true;
+        //   }
+        //   else if (Sentence.Contains(" " + Word + ","))
+        //   {
+        //     return true;
+        //   }
+        //   else
+        //   {
+        //     return false;
+        //   }
+        // }
 
         // int occur = 0;
         // public int GetOccurencesCount()

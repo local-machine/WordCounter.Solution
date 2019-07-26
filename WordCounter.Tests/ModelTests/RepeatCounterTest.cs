@@ -14,20 +14,20 @@ namespace WordCounter.Test
             Assert.AreEqual(typeof(RepeatCounter), newRepeatCounter.GetType());
         }
 
-        [TestMethod]
-        public void RepeatCounterTest_IsValidWordInSentence_True()
-        {
-            RepeatCounter newRepeatCounter = new RepeatCounter("cat", "I'm walking to the cat, cafe.");
-            bool result = newRepeatCounter.IsValidWordInSentence();
-            Assert.AreEqual(result, true);
-        }
+        // [TestMethod]
+        // public void RepeatCounterTest_IsValidWordInSentence_True()
+        // {
+        //     RepeatCounter newRepeatCounter = new RepeatCounter("cat", "I'm walking to the cat, cafe.");
+        //     bool result = newRepeatCounter.IsValidWordInSentence();
+        //     Assert.AreEqual(result, true);
+        // }
         
-        [TestMethod]
-        public void RepeatCounterTest_IsValidWordInSentence_False()
-        {
-            RepeatCounter newRepeatCounter = new RepeatCounter("cat", "I'm walking to the cathedral.");
-            bool result = newRepeatCounter.IsValidWordInSentence();
-            Assert.AreEqual(result, false);
-        }
+        // [TestMethod]
+        // public void RepeatCounterTest_IsValidWordInSentence_False()
+        // {
+        //     RepeatCounter newRepeatCounter = new RepeatCounter("cat", "I'm walking to the cathedral.");
+        //     bool result = newRepeatCounter.IsValidWordInSentence();
+        //     Assert.AreEqual(result, false);
+        // }
     }
 }
