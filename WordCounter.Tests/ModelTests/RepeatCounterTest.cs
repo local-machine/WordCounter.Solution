@@ -12,7 +12,9 @@ namespace WordCounter.Test
         {
             RepeatCounter myRepeatCounter = new RepeatCounter("cat", "I'm walking to the cathedral.");
             Assert.AreEqual(typeof(RepeatCounter), myRepeatCounter.GetType());
-
         }
+
+        // [TestMethod]
+        // public void 
     }
 }
