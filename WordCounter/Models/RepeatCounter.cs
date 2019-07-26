@@ -14,19 +14,6 @@ namespace WordCounter.Models
             Sentence = userSentance;
         }
 
-        // public int IsWordInSentence()
-        // {
-        //     char[] delimiterChars = { ' ', ',', '.', ':', ';', '!', '?' };
-        //     string[] wordsFromSentence = Sentence.Split(delimiterChars);
-
-        //     if (Sentence.Contains(Word))
-        //     {
-        //       foreach (var Word in Sentence)
-        //       {
-        //           int occurenceCount = Sentence.Split(Word).Length -1;
-        //       }
-        //     }
-        // }
         public bool IsValidWordInSentence()
         {
             if (Sentence.Contains(" " + Word + " "))
@@ -61,12 +48,32 @@ namespace WordCounter.Models
 
         int occur = 0;
 
+        // Doesn't work for multiple on words like 'cathedral'
+        
+        // public int GetOccurenceCount()
+        // {
+        //     if (IsValidWordInSentence() == true)
+        //     {
+        //         int occur = Sentence.Split(Word).Length - 1;
+        //         return occur;
+        //     }
+        //     else
+        //     {
+        //         int occur = 0;
+        //         return occur;
+        //     }
+        // }
         public int GetOccurenceCount()
         {
             if (IsValidWordInSentence() == true)
             {
-                int occur = Sentence.Split(Word).Length - 1;
-                return occur;
+                char[] delimiterChars = { ' ', ',', '.', ':', ';', '!', '?' };
+                string[] wordsFromSentence = Sentence.Split(delimiterChars);
+
+                foreach (var Word in wordsFromSentence)
+                {
+                    int occur = Sentence.Split(Word).Length - 1;
+                }
             }
             else
             {
@@ -74,7 +81,5 @@ namespace WordCounter.Models
                 return occur;
             }
         }
-
     }
-
 }
