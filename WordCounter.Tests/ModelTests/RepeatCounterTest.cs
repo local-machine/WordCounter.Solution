@@ -1,16 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using WordCounter.Models;
 
-namespace Project.Test
+namespace WordCounter.Test
 {
     [TestClass]
-    public class ProgramTest
+    public class RepeatCounterTest
     {
         [TestMethod]
-        public void ConstructorTest_True()
+        public void RepeatCounterConstructorTest_CreatesInstancesOfRepeatCounter_RepeatCounter()
         {
-           
-            
+            RepeatCounter myRepeatCounter = new RepeatCounter("cat", "I'm walking to the cathedral.");
+            Assert.AreEqual(typeof(RepeatCounter), myRepeatCounter.GetType());
+
         }
     }
 }
