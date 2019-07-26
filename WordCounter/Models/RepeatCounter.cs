@@ -13,14 +13,45 @@ namespace WordCounter.Models
             Word = userWord;
             Sentence = userSentance;
         }
-
-        // List<int> occurences = new List<int>(); 
         
-        int occur = 0;
-        public bool GetValidWordInSentence(string Sentence, string Word)
+        public bool IsValidWordInSentence()
         {
-          if 
+          if (Sentence.Contains(" " + Word + " "))
+          {
+            return true;
+          }
+          else if (Sentence.Contains(" " + Word + "."))
+          {
+            return true;
+          }
+          else if (Sentence.Contains(" " + Word + "!"))
+          {
+            return true;
+          }
+          else if (Sentence.Contains(" " + Word + "?"))
+          {
+            return true;
+          }
+          else if (Sentence.Contains(" " + Word + ";"))
+          {
+            return true;
+          }
+          else if (Sentence.Contains(" " + Word + ","))
+          {
+            return true;
+          }
+          else
+          {
+            return false;
+          }
         }
+
+        // int occur = 0;
+        // public int GetOccurencesCount()
+        // {
+        //   while ((occur < Sentence.Length) && (occur = ))
+        // }
+
     }
 
 }
