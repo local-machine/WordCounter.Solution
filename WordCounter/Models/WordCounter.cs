@@ -10,9 +10,14 @@ namespace WordCounter
         {
             System.Console.WriteLine("Find the word in the sentence!");
             System.Console.WriteLine("Please enter a word: ");
-            string Word = Console.ReadLine();
-            System.Console.WriteLine("Please enter a the sentence you'd like to search for your word: ");
-            string Sentence = Console.ReadLine();
+            string userWord = Console.ReadLine();
+            System.Console.WriteLine("Please enter the sentence you'd like to search: ");
+            string userSentence = Console.ReadLine();
+            RepeatCounter newRepeatCounter = new RepeatCounter(userWord, userSentence);
+            int result = newRepeatCounter.GetOccurenceCount();
+            System.Console.WriteLine("------------------------------------");
+            System.Console.WriteLine($"The word {userWord} appeared {result} time(s) in the sentence: '{userSentence}'");
+
         }
     }
 }
